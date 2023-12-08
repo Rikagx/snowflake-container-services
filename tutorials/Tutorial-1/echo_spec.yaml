@@ -1,0 +1,16 @@
+spec:
+  container:
+  - name: echo
+    image: /tutorial_db/data_schema/tutorial_repository/my_echo_service_image:tutorial 
+    env:
+      SERVER_PORT: 8000
+      CHARACTER_NAME: Bob
+    readinessProbe:
+      port: 8000
+      path: /healthcheck
+  endpoint:
+  - name: echoendpoint
+    port: 8000
+    public: true
+
+

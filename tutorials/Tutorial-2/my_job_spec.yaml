@@ -1,0 +1,9 @@
+spec:
+  container:
+  - name: main
+    image: /tutorial_db/data_schema/tutorial_repository/my_job_image:tutorial
+    env:
+      SNOWFLAKE_WAREHOUSE: tutorial_warehouse
+    args:
+    - "--query=select current_time() as time,'hello'"
+    - "--result_table=results"

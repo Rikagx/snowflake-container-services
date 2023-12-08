@@ -1,0 +1,6 @@
+spec:
+  container:
+    - name: main
+      image: /tutorial_db/data_schema/tutorial_repository/service_to_service:tutorial
+      env:
+        SERVICE_URL: "http://echo-service:8000/echo"
