@@ -3,7 +3,7 @@ spec:
   - name: rstudio
     image: duloftf-posit-software-pbc.registry.snowflakecomputing.com/tutorial_db/data_schema/tutorial_repository/rstudio/rstudio-workbench:deploy
     env:
-      RSW_LICENSE: "BH6Z-JTKX-ZSMY-I43C-D673-NAUE-J2TA"
+      RSW_LICENSE: ""
     resources:
       limits:
         memory: 16Gi
