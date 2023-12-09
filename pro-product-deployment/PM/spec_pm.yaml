@@ -3,7 +3,7 @@ spec:
   - name: pm
     image: duloftf-posit-software-pbc.registry.snowflakecomputing.com/tutorial_db/data_schema/tutorial_repository/rstudio/rstudio-package-manager:deploy
     env:
-      RSPM_LICENSE: "729H-2FGQ-QUBU-4STR-H7VT-9F9P-WETA"
+      RSPM_LICENSE: ""
     resources:
       limits:
         memory: 16Gi
