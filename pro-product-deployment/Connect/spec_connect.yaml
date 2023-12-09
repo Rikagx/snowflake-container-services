@@ -1,0 +1,15 @@
+spec:
+  container:
+  - name: rstudio-connect
+    image: duloftf-posit-software-pbc.registry.snowflakecomputing.com/tutorial_db/data_schema/tutorial_repository/rstudio/rstudio-connect:deploy
+    env:
+      RSC_LICENSE: "Z8WK-Q2MZ-N8QF-SRQI-ZDKS-2GIR-M2TA"
+    resources:
+      limits:
+        memory: 16Gi
+      requests:
+        memory: 4Gi
+  endpoint:
+  - name: e1
+    port: 8080
+    public: true

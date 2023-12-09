@@ -1,0 +1,15 @@
+spec:
+  container:
+  - name: pm
+    image: duloftf-posit-software-pbc.registry.snowflakecomputing.com/tutorial_db/data_schema/tutorial_repository/rstudio/rstudio-package-manager:deploy
+    env:
+      RSPM_LICENSE: "729H-2FGQ-QUBU-4STR-H7VT-9F9P-WETA"
+    resources:
+      limits:
+        memory: 16Gi
+      requests:
+        memory: 4Gi
+  endpoint:
+  - name: e1
+    port: 8080
+    public: true

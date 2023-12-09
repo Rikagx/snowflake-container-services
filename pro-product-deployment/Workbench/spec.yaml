@@ -1,0 +1,15 @@
+spec:
+  container:
+  - name: rstudio
+    image: duloftf-posit-software-pbc.registry.snowflakecomputing.com/tutorial_db/data_schema/tutorial_repository/rstudio/rstudio-workbench:deploy
+    env:
+      RSW_LICENSE: "BH6Z-JTKX-ZSMY-I43C-D673-NAUE-J2TA"
+    resources:
+      limits:
+        memory: 16Gi
+      requests:
+        memory: 4Gi
+  endpoint:
+  - name: e1
+    port: 8080
+    public: true
