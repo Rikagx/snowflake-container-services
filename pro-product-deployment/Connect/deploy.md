@@ -12,7 +12,7 @@ PUT file://pro-product-deployment/Connect/spec_connect.yaml @tutorial_stage
 ## create a service
 ```sql
 CREATE SERVICE rsconnect
-  IN COMPUTE POOL tutorial_compute_pool
+  IN COMPUTE POOL compute_pool_connect
   FROM @tutorial_stage
   SPECIFICATION_FILE='spec_connect.yaml'
   MIN_INSTANCES=1

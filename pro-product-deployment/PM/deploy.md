@@ -12,7 +12,7 @@ PUT file://pro-product-deployment/PM/spec_pm.yaml @tutorial_stage
 ## create a service
 ```sql
 CREATE SERVICE rspm
-  IN COMPUTE POOL tutorial_compute_pool
+  IN COMPUTE POOL compute_pool_pm
   FROM @tutorial_stage
   SPECIFICATION_FILE='spec_pm.yaml'
   MIN_INSTANCES=1
