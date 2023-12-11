@@ -3,7 +3,7 @@ spec:
   - name: rstudio-connect
     image: duloftf-posit-software-pbc.registry.snowflakecomputing.com/tutorial_db/data_schema/tutorial_repository/rstudio/rstudio-connect:deploy
     env:
-      RSC_LICENSE: "Z8WK-Q2MZ-N8QF-SRQI-ZDKS-2GIR-M2TA"
+      RSC_LICENSE: ""
     resources:
       limits:
         memory: 16Gi
