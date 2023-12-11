@@ -11,5 +11,7 @@ spec:
         memory: 4Gi
   endpoint:
   - name: e1
-    port: 8080
+    port: 3939
     public: true
+  networkPolicyConfig:
+      allowInternetEgress: true
