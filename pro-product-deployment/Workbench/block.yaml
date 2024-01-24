@@ -1,0 +1,25 @@
+spec:
+  container:
+  - name: rstudio
+    image: duloftf-posit-software-pbc.registry.snowflakecomputing.com/tutorial_db/data_schema/tutorial_repository/workbench:root
+    volumeMounts:
+    - name: home
+      mountPath: /home
+    env:
+      RSW_LICENSE: ""
+    resources:
+      limits:
+        memory: 16Gi
+      requests:
+        memory: 4Gi
+  endpoint:
+  - name: e1
+    port: 8787
+    public: true
+  networkPolicyConfig:
+    allowInternetEgress: true
+  volumes: 
+  - name: home
+    source: block
+    size: 10Gi
+
