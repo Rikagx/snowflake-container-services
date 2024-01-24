@@ -1,7 +1,7 @@
 spec:
   container:
   - name: pm
-    image: duloftf-posit-software-pbc.registry.snowflakecomputing.com/tutorial_db/data_schema/tutorial_repository/rstudio/rstudio-package-manager:deploy
+    image: duloftf-posit-software-pbc.registry.snowflakecomputing.com/tutorial_db/data_schema/tutorial_repository/rspm:12
     env:
       RSPM_LICENSE: ""
     resources:

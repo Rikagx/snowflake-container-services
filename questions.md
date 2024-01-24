@@ -77,3 +77,55 @@ Requires K8s PVC to create data directory - if you can't then need to mount with
 ## Package Manager
 
 Requires K8s PVC to create data directory - if you can't then need to mount with a regular volume
+
+
+when stopping and resuming services get a weird error - 000005 (XX000): Failed to get logs for container: rstudio. Error message: UNKNOWN, Container Status: UNKNOWN, Container Image: duloftf-posit-software-pbc.registry.snowflakecomputing.com/tutorial_db/data_schema/tutorial_repository/rstudio/rstudio-workbench:deploy - 
+- this is because compute pool was still resuming - would be good to get a more helpful message
+
+ ('nonce-...') is required to enable inline execution. Note that hashes do not apply to event handlers, style attributes and javascript: navigations unless the 'unsafe-hashes' keyword is present. Note also that 'style-src' was not explicitly set, so 'default-src' is used as a fallback. - causing the icons not to show up
+
+ ran shiny app - only shows up in browser - launcher does not work, geyser plot doesnt show up
+ content security policy of your site blocks resources
+
+ can run scripts but always get an error that says status code 504 when executing dependencies - when downloading packages to open shiny app or markdown script
+
+markdown doesnt show up in launcher window - but does show up when click open in browser - plots do not show up
+
+
+publishing markdown -super slow - installing, curling, caching, using - takes about 20 minutes but does eventually publish
+
+but may be due to size of instance which was default for testing - eventhough using cached binaries
+
+starting up multiple sessions works well
+
+
+when loading package caret - 
+
+System has not been booted with systemd as init system (PID 1). Can't operate.
+Failed to connect to bus: Host is down
+Warning message:
+In system("timedatectl", intern = TRUE) :
+  running command 'timedatectl' had status 1
+
+downloads are fast
+
+can connect to snowflake database and write and read data!
+
+can clone repos from git in terminal and in the UI
+
+error when navigating across folders - screenshot
+
+
+vscode - python not installed in correct path - 
+bash: python: command not found
+
+PATH=/usr/lib/rstudio-server/bin/code-server/lib/vscode/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/bin
+
+
+in jupyter notebook
+$ python3 -m venv .venv
+The virtual environment was not created successfully because ensurepip is not
+available.  On Debian/Ubuntu systems, you need to install the python3-venv
+package using the following command.
+
+    apt install python3.10-venv

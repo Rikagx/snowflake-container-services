@@ -13,7 +13,7 @@ PUT file://pro-product-deployment/Workbench/spec.yaml @tutorial_stage
 ```sql
 CREATE SERVICE r_ide
   IN COMPUTE POOL tutorial_compute_pool
-  FROM @tutorial_stage
+  FROM @specs
   SPECIFICATION_FILE='spec.yaml'
   MIN_INSTANCES=1
   MAX_INSTANCES=1;

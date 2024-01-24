@@ -1,10 +1,7 @@
 spec:
   container:
   - name: rstudio
-    image: duloftf-posit-software-pbc.registry.snowflakecomputing.com/tutorial_db/data_schema/tutorial_repository/rstudio/rstudio-workbench:deploy
-    volumeMounts:
-    - name: home
-      mountPath: /home
+    image: duloftf-posit-software-pbc.registry.snowflakecomputing.com/tutorial_db/data_schema/tutorial_repository/workbench:root
     env:
       RSW_LICENSE: ""
     resources:
@@ -18,6 +15,3 @@ spec:
     public: true
   networkPolicyConfig:
     allowInternetEgress: true
-  volumes: 
-  - name: home
-    source: "@volumes"
