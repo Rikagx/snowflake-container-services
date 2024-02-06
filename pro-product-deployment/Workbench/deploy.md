@@ -26,6 +26,3 @@ SELECT SYSTEM$GET_SERVICE_STATUS('r_ide');
 CALL SYSTEM$GET_SERVICE_LOGS('TUTORIAL_DB.data_schema.r_ide', '0', 'rstudio', 1000);
 ```
 
-asks me to signin to snowflake when going to endpoint
-Sign in to Snowflake to continue to SNOWSERVICES_INGRESS_OAUTH (SnowServices Ingress)
-then get error that reads: upstream connect error or disconnect/reset before headers. reset reason: connection termination
