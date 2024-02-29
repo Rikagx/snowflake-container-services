@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../rstudio-docker-products"
+		}
+	],
+	"settings": {}
+}

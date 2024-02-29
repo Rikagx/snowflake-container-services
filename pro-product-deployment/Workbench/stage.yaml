@@ -6,7 +6,7 @@ spec:
     - name: home
       mountPath: /home/workbench
     env:
-      RSW_LICENSE: "BMD9-2Z66-8WU4-YBDU-DJ68-7Z9U-8NTA"
+      RSW_LICENSE: ""
     resources:
       limits:
         memory: 16Gi

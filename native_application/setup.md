@@ -1,4 +1,27 @@
-# Create an Application Package
+![](native_app_arch.png "native app")
+
+
+The core components of a Snowflake Native App with Snowpark Container Services are:
+
+*Image repository:* Container image storage service to safely store and replicate content inside Snowflake
+
+
+*Compute pool:* Collection of nodes available in a variety of different SKUs, dedicated to a given customer and to a single app 
+
+
+*Service definition files:* Definition of service(s) with pointers to the container images in the registry and endpoint definitions
+
+
+*Snowflake Native App Package:* Collection of all the content relevant to your app, which now includes container images
+
+
+*Manifest file:* Definition of the app, its components, version info and configuration 
+
+
+*Setup script:* Configuration script that installs the app in the consumer’s account, including compute pool setup 
+
+
+
 In this section you will create an application package that will function as a container for the resources required by your application. You will perform the following tasks:
 
 - Create an application package.
@@ -78,3 +101,14 @@ PUT file://native_application/scripts/setup.sql @workbench_na.stage_content.setu
 PUT file://native_application/setup.md @workbench_na.stage_content.setup_stage overwrite=true auto_compress=false;
 ```
 LIST @workbench_na.stage_content.setup_stage;
+
+GRANT CREATE APPLICATION ON ACCOUNT TO ROLE test_role;
+GRANT INSTALL ON APPLICATION PACKAGE workbench_na
+  TO ROLE test_role;
+
+
+CREATE APPLICATION workbench
+  FROM APPLICATION PACKAGE workbench_na
+  USING '@workbench_na.stage_content.setup_stage';
+
+SHOW APPLICATIONS;

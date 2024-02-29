@@ -129,3 +129,7 @@ available.  On Debian/Ubuntu systems, you need to install the python3-venv
 package using the following command.
 
     apt install python3.10-venv
+
+
+
+Connection to the server failed. Ensure that you have a working internet connection, you've configured any required proxies, and your system's root CA certificate store is up to date
