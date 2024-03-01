@@ -1,4 +1,9 @@
-manifest_version: 1
+version:
+  name: V1
+  label: First Version
+
 artifacts:
-  setup_script: scripts/setup.sql
-  readme: setup.md
+  setup_script: setup.sql
+  container_services:
+    images:
+    - /tutorial_database/tutorial_schema/tutorial_image_repo/rstudio/rstudio-workbench:latest
