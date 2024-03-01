@@ -3,7 +3,7 @@ spec:
   - name: rstudio
     image: /tutorial_database/tutorial_schema/tutorial_image_repo/rstudio/rstudio-workbench:latest
     env:
-      RSW_LICENSE: "BH6Z-JTKX-ZSMY-I43C-D673-NAUE-J2TA"
+      RSW_LICENSE: ""
     resources:
       limits:
         memory: 16Gi
