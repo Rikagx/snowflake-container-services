@@ -1,0 +1,10 @@
+spec:
+    containers:
+        - name: workbench
+          image: /pro/app/img/workbench:latest
+          env: 
+            DISABLE_AUTH: true
+    endpoints:
+        - name: workbench
+          port: 8787
+          public: true

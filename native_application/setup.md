@@ -112,3 +112,19 @@ CREATE APPLICATION workbench
   USING '@workbench_na.stage_content.setup_stage';
 
 SHOW APPLICATIONS;
+
+
+PUT file://manifest.yml @tutorial_database.tutorial_schema.tutorial_stage overwrite=true auto_compress=false;
+PUT file://scripts/setup.sql @tutorial_database.tutorial_schema.tutorial_stage overwrite=true auto_compress=false;
+PUT file://spec.yaml @tutorial_database.tutorial_schema.tutorial_stage overwrite=true auto_compress=false;
+
+>alter application package tutorial_package add version "V1" using @tutorial_database.tutorial_schema.tutorial_stage
+
+
+
+alter application package tutorial_package add version "V1" using @tutorial_datab
+                                                ase.tutorial_schema.tutorial_stage
+                                                ;
+                                                ;
+
+alter application package tutorial_package drop version "V1";
