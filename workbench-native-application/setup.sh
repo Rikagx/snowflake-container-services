@@ -9,6 +9,7 @@
 -- SHOW IMAGE REPOSITORIES;
 ### example url: duloftf-posit-software-pbc.registry.snowflakecomputing.com/pro/app/img
 docker tag workbench:latest duloftf-posit-software-pbc.registry.snowflakecomputing.com/pro/app/img/workbench:latest
+-- select SYSTEM$REGISTRY_LIST_IMAGES( '/PRO/APP/IMG');
 
 # to upload an image on your behalf to your repository, you need to first authenticate with Docker
 # For the <registry_hostname>, use the SHOW IMAGE REPOSITORIES SQL command above to get the repository URL. 
