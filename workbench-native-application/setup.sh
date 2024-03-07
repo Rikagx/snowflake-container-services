@@ -21,19 +21,3 @@ docker login <registry_hostname> -u <username>
 snow registry token --format JSON | docker login <registry-hostname> -u 0sessiontoken --password-stdin
 
 docker push <repository_url>/workbench:latest
-
-# ---- Create external network for your application
-
-# this integration grants access to our application to access network rules on the internet, for example, cran
-# https://docs.snowflake.com/developer-guide/external-network-access/creating-using-external-network-access#label-creating-using-external-access-integration-network-rule
-
-USE ROLE ACCOUNTADMIN;
-CREATE OR REPLACE NETWORK RULE PRO.APP.ALLOW_ALL_RULE
-  TYPE = 'HOST_PORT'
-  MODE = 'EGRESS'
-  VALUE_LIST= ('0.0.0.0:443', '0.0.0.0:80');
-
-USE ROLE ACCOUNTADMIN;
-CREATE OR REPLACE EXTERNAL ACCESS INTEGRATION ALLOW_ALL_EAI
-ALLOWED_NETWORK_RULES = (PRO.APP.ALLOW_ALL_RULE)
-ENABLED = true;

@@ -29,8 +29,21 @@ CREATE APPLICATION NAE_APP
 USE ROLE SECURITYADMIN;
 GRANT USAGE ON COMPUTE POOL NAE TO APPLICATION NAE_APP;
 
+--- this integration grants access to our application to access network rules on the internet, for example, cran
+--- https://docs.snowflake.com/developer-guide/external-network-access/creating-using-external-network-access#label-creating-using-external-access-integration-network-rule
+
 USE ROLE ACCOUNTADMIN;
--- integration has been created elsewhere in external_network.sh - this one is wide-open so only for testing purposes
+CREATE DATABASE SEC;
+CREATE SCHEMA RULES;
+CREATE OR REPLACE NETWORK RULE SEC.RULES.ALLOW_ALL_RULE
+  TYPE = 'HOST_PORT'
+  MODE = 'EGRESS'
+  VALUE_LIST= ('0.0.0.0:443', '0.0.0.0:80');
+
+USE ROLE ACCOUNTADMIN;
+CREATE OR REPLACE EXTERNAL ACCESS INTEGRATION ALLOW_ALL_EAI
+ALLOWED_NETWORK_RULES = (SEC.RULES.ALLOW_ALL_RULE)
+ENABLED = true;
 
 GRANT USAGE ON INTEGRATION ALLOW_ALL_EAI TO APPLICATION NAE_APP;
 GRANT BIND SERVICE ENDPOINT ON ACCOUNT TO APPLICATION NAE_APP;
