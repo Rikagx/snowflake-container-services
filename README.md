@@ -1,8 +1,9 @@
 ## Configure Pre-requisites
 
--   A Snowflake account: Note that trial accounts are not supported.
--   SnowSQL, the command-line client for executing SQL commands: You can use any Snowflake client that supports executing SQL commands and uploading files to a Snowflake stage. The tutorials are tested using the SnowSQL and the Snowsight web interface. For instructions to install this command-line client, see [Installing SnowSQL](https://docs.snowflake.com/en/user-guide/snowsql-install-config).
--   [Docker Desktop](https://docs.docker.com/get-docker/): Note that you can use any OCI-compliant clients to create images, such as Docker, Podman, or Nerdctl.
+-   **A Snowflake account:** Note that trial accounts are not supported.
+-   **SnowSQL:** the command-line client for executing SQL commands. You can use any Snowflake client that supports executing SQL commands and uploading files to a Snowflake stage. The tutorials are tested using the SnowSQL and the Snowsight web interface. For instructions to install this command-line client, see [Installing SnowSQL](https://docs.snowflake.com/en/user-guide/snowsql-install-config).
+-   [**Docker Desktop**](https://docs.docker.com/get-docker/): Note that you can use any OCI-compliant clients to create images, such as Docker, Podman, or Nerdctl.
+-   **Snowflake extension for VSCode (Optional):** enables you to connect to Snowflake, write and execute SQL queries, and view results without leaving VS Code.
 
 ## Terminology
 
@@ -20,7 +21,7 @@
 
 ## Helpful Links
 
--   [SPCS overview](https://docs.snowflake.com/en/LIMITEDACCESS/snowpark-containers/overview )
+-   [SPCS overview](https://docs.snowflake.com/en/LIMITEDACCESS/snowpark-containers/overview)
 
 -   [SPCS tutorials](https://docs.snowflake.com/developer-guide/snowpark-container-services/tutorials/common-setup)
 

@@ -1,16 +1,18 @@
 manifest_version: 1
 
 version:
-  name: V0
+  name: V1
   label: Example Version
 
 artifacts:
   setup_script: setup.sql
   container_services:
     images:
-    - /pro/app/img/workbench:latest
+    - /pro/app/img/wb-stage
 
 privileges:
   - BIND SERVICE ENDPOINT:
       description: "a service can serve requests from public endpoint"
+  - CREATE DATABASE:
+      descriptions: "ability to create databases"
       

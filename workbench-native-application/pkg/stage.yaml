@@ -1,0 +1,16 @@
+spec:
+    containers:
+        - name: container
+          image: /pro/app/img/wb-stage
+          volumeMounts:
+          - name: home
+            mountPath: /home
+          env:
+            RSW_LICENSE: ""
+    endpoints:
+        - name: container
+          port: 8787
+          public: true
+    volumes: 
+    - name: home
+    source: "@workbench_backend_db.filestystem.filestystem"

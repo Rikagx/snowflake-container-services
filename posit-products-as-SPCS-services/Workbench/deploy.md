@@ -11,9 +11,9 @@ PUT file://pro-product-deployment/Workbench/spec.yaml @tutorial_stage
 
 ## create a service
 ```sql
-CREATE SERVICE r_ide
-  IN COMPUTE POOL tutorial_compute_pool
-  FROM @specs
+CREATE SERVICE wb
+  IN COMPUTE POOL tutorial_compute_pool3
+  FROM @tutorial_stage
   SPECIFICATION_FILE='spec.yaml'
   MIN_INSTANCES=1
   MAX_INSTANCES=1;

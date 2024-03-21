@@ -1,12 +1,9 @@
 spec:
   container:
   - name: rstudio
-    image: duloftf-posit-software-pbc.registry.snowflakecomputing.com/tutorial_db/data_schema/tutorial_repository/rstudio/rstudio-workbench:deploy
-    volumeMounts:
-    - name: home
-      mountPath: /home
+    image: duloftf-posit-software-pbc.registry.snowflakecomputing.com/tutorial_db/data_schema/tutorial_repository/rstudio/rstudio-workbench:jammy
     env:
-      RSW_LICENSE: ""
+      RSW_LICENSE: "BMD9-2Z66-8WU4-YBDU-DJ68-7Z9U-8NTA"
     resources:
       limits:
         memory: 16Gi
@@ -18,6 +15,4 @@ spec:
     public: true
   networkPolicyConfig:
     allowInternetEgress: true
-  volumes: 
-  - name: home
-    source: "@volumes"
+

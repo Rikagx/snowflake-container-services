@@ -17,7 +17,7 @@ def main(session, pool_name, eai_name):
     session.sql(f""" 
         CREATE SERVICE services.workbench
         IN COMPUTE POOL {pool_name}
-        SPECIFICATION_FILE='spec.yaml'
+        SPECIFICATION_FILE='stage.yaml'
         EXTERNAL_ACCESS_INTEGRATIONS = ({eai_name.upper()})
     """).collect()
 
@@ -41,3 +41,32 @@ CREATE OR REPLACE PROCEDURE utils.get_endpoint()
 
 GRANT USAGE ON PROCEDURE utils.start_app(varchar, varchar) TO APPLICATION ROLE nae_app_role;
 GRANT USAGE ON PROCEDURE utils.get_endpoint() TO APPLICATION ROLE nae_app_role; 
+
+
+/* Create a Snowflake-based backend for Workbench metadata db
+maybe create a second application role for stored procedure to create wb_backend
+
+create db if not exists workbench_backend;
+create schema if not exists workbench_backend.metadata; 
+create schema if not exists workbench_backend.file_system;
+
+create stage if not exists workbench_backend.file_system.stage_name ENCRYPTION = (TYPE='SNOWFLAKE_SSE');
+grant all privileges on db workbench_backend to application role nae_app_role; 
+# may need to grant usage on - db workbench_backend potentially squeeze perms over time
+
+grant all privileges on schema workbench_backend.metadata application role nae_app_role; 
+grant all privileges on schema workbench_backend.file_system to application role nae_app_role; 
+grant all privilieges on stage workbench_backend.file_system.stage_name to application role nae_app_role; 
+
+CREATE WAREHOUSE db
+    WAREHOUSE_SIZE=XSMALL
+    INITIALLY_SUSPENDED=TRUE;
+
+grant all privileges to warhouse db application role nae_app_role;
+
+# provide guidance for if objects already exist then the 
+# when application is deleted, the ownershop of the db goes to the installer
+# when application is reinstalled, need to grant all privileges to the application again 
+# if these objects exist before app is installed, then all priv on these objects need to be granted on the application
+
+*/

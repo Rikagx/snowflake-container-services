@@ -31,10 +31,18 @@ USE ROLE NAE_PRODUCER_ROLE;
 CREATE APPLICATION PACKAGE NAE_APP_PKG;
 
 USE ROLE NAE_PRODUCER_ROLE;
+-- for recreating the application use the following commands to drop previous versions
+--ALTER APPLICATION PACKAGE NAE_APP_PKG DROP VERSION "V0";
 ALTER APPLICATION PACKAGE NAE_APP_PKG
   ADD VERSION "V0"
   USING @pro.app.pkg;
 
--- for recreating the application use the following commands to drop previous versions
--- USE ROLE NAE_PRODUCER_ROLE;
--- ALTER APPLICATION PACKAGE NAE_APP_PKG DROP VERSION "V0";
+ALTER APPLICATION PACKAGE NAE_APP_PKG
+  ADD VERSION "V1"
+  USING @pro.app.pkg;
+
+  ALTER APPLICATION PACKAGE NAE_APP_PKG
+  ADD VERSION "V2"
+  USING @pro.app.pkg;
+
+
