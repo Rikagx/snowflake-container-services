@@ -24,8 +24,6 @@ CREATE DATABASE tutorial_db;
 GRANT OWNERSHIP ON DATABASE tutorial_db TO ROLE test_role;
 
 
-
-
 USE ROLE test_role;
 USE DATABASE tutorial_db;
 USE WAREHOUSE tutorial_warehouse;
